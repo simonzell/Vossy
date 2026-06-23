@@ -147,16 +147,41 @@ a { text-decoration: none; color: inherit; }
 
 /* ── Spotify ──────────────────────────────────────── */
 .spotify-section {
-  padding: 40px 0;
-  background: #09050f;
+  padding: 60px 0;
+  background: transparent;
   position: relative;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.spotify-section .container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.spotify-section iframe {
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  animation: floatIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── About ────────────────────────────────────────── */
 .about {
   padding: 100px 0;
-  background: #09050f;
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -179,7 +204,7 @@ a { text-decoration: none; color: inherit; }
 /* ── Music ────────────────────────────────────────── */
 .music {
   padding: 100px 0;
-  background: #06030f;
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -234,7 +259,7 @@ a { text-decoration: none; color: inherit; }
   text-align: center;
   font-size: 0.8rem;
   color: #5a4870;
-  background: #06030f;
+  background: transparent;
   position: relative;
   z-index: 1;
 }
