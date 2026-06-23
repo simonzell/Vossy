@@ -1,0 +1,240 @@
+/* ── Reset & base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #06030f;
+  color: #e2d9f3;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── Layout ───────────────────────────────────────── */
+.site { display: flex; flex-direction: column; min-height: 100vh; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Hero ─────────────────────────────────────────── */
+.hero-video-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  transform: scale(1.25);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-rays {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #a855f7;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: clamp(5rem, 16vw, 11rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow: 0 0 80px rgba(168, 85, 247, 0.6), 0 0 160px rgba(168, 85, 247, 0.3);
+  line-height: 1;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: #c4b5d4;
+  max-width: 400px;
+  opacity: 0.85;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 1.2rem;
+  color: #a855f7;
+  opacity: 0.6;
+  animation: bob 2s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #a855f7;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.btn-primary:hover {
+  background: #9333ea;
+  box-shadow: 0 0 32px rgba(168, 85, 247, 0.7);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #c4b5d4;
+}
+
+.btn-ghost:hover {
+  border-color: #a855f7;
+  color: #fff;
+  background: rgba(168, 85, 247, 0.08);
+}
+
+/* ── Spotify ──────────────────────────────────────── */
+.spotify-section {
+  padding: 40px 0;
+  background: #09050f;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── About ────────────────────────────────────────── */
+.about {
+  padding: 100px 0;
+  background: #09050f;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.section-body {
+  font-size: 1.1rem;
+  color: #b8a8cc;
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+/* ── Music ────────────────────────────────────────── */
+.music {
+  padding: 100px 0;
+  background: #06030f;
+  position: relative;
+  z-index: 1;
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.track-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #110a1f;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.track-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.track-cover {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.track-info {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f0ebfa;
+}
+
+.track-meta {
+  font-size: 0.78rem;
+  color: #7c6a93;
+}
+
+/* ── Footer ───────────────────────────────────────── */
+.footer {
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #5a4870;
+  background: #06030f;
+  position: relative;
+  z-index: 1;
+}
