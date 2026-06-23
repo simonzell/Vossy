@@ -39,7 +39,6 @@ export default function App() {
           />
         </div>
         <div className="hero-content">
-          <p className="hero-label">AI Artist</p>
           <h1 className="hero-title">VOSSY</h1>
           <p className="hero-sub">Music generated from the edges of imagination</p>
           <div className="hero-actions">
