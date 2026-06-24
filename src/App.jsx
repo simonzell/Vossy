@@ -39,7 +39,7 @@ export default function App() {
           />
         </div>
         <div className="hero-content">
-          <h1 className="hero-title">VOSSY</h1>
+          <img src="/vossy-logo.png" alt="Vossy" className="hero-logo" />
           <p className="hero-sub">Music generated from the edges of imagination</p>
           <div className="hero-actions">
             <a href="#music" className="btn btn-primary">Listen Now</a>
